@@ -57,9 +57,10 @@ void * nextList(List * list) {
 
 
 void * lastList(List * list) {
-    list->current = list->tail;   //enlazar con el ultimo nodo revisarr
-    if (list->tail != NULL) 
+    list->current = list->tail;
+    if (list->tail != NULL) {
         return list->tail->data;
+    }
     return NULL;
 
 }
