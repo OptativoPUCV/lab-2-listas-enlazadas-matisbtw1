@@ -137,6 +137,7 @@ void * popCurrent(List * list) {
     if (izq != NULL) {
         izq->next = der;  
     } else {
+        firstList(list);
         list->head = der;  
     }
 
