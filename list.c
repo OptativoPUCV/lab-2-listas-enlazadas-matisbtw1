@@ -131,12 +131,12 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
     if (list->current == NULL)  return NULL;
     
+    void * data = list->current->data;
     Node* izq = list->current->prev;
     Node* der = list->current->next;
     if (izq != NULL) {
         izq->next = der;  
     } else {
-        firstList(list);
         list->head = der;  
     }
 
@@ -148,7 +148,7 @@ void * popCurrent(List * list) {
 
     free(list->current);
     list->current = NULL;
-    
+    return data;
 }
 
 void cleanList(List * list) {
