@@ -261,3 +261,17 @@ list.c:83:22: error: 'newNode' undeclared (first use in this function)
 list.c:83:22: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 d7a18e0
+Thu, Mar 27, 2025  2:13:36 PM: 
+ list.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'pushFront':
+list.c:81:6: error: expected expression before 'Node'
+     *Node * newNode = createNode(data);
+      ^~~~
+list.c:82:5: error: 'newNode' undeclared (first use in this function)
+     newNode->next = list->head;
+     ^~~~~~~
+list.c:82:5: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+550725b
