@@ -52,16 +52,25 @@ void * nextList(List * list) {
         if (list->current != NULL) { 
             return list->current->data; }
         }
-        return NULL; 
+    else return NULL; 
     }
 
 
 void * lastList(List * list) {
-    return NULL;
+    list->current = list->tail;   //enlazar con el ultimo nodo
+    if (list->tail != NULL) 
+        return list->tail->data;
+    else return NULL;
+
 }
 
 void * prevList(List * list) {
-    return NULL;
+    if (list->current != NULL) { 
+        list->current = list->current->prev; 
+        if (list->current != NULL) { 
+            return list->current->data; }
+        }
+    else return NULL; 
 }
 
 void pushFront(List * list, void * data) {
